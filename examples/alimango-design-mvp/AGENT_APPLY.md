@@ -20,12 +20,18 @@ Create a new repository and URL for the Alimango Design Platform MVP, then copy/
 10. Do not expose arbitrary animation-to-component pairing in the normal UI.
 11. Temporary preview links must not expose editor controls.
 12. Handoff ZIP must always include `alimango-design.json`.
-13. Run tests before deploy.
+13. Keep AI optional and only under Settings; no AI item belongs in the main editor menu.
+14. Existing projects must stay private until explicitly shared with the AI connection.
+15. Preserve revision checks for remote writes and the governed animation compatibility gate.
+16. Run tests before deploy.
 
 ## Local validation
 
 ```bash
 node --check server/index.mjs
+node --check server/ai-gateway.mjs
+node --check server/mcp.mjs
+node --check public/js/ai-settings.js
 node --check public/js/app.js
 node --check public/js/model.js
 node --check public/js/library.js
@@ -49,7 +55,13 @@ Then verify manually:
 - apply Hover Lift;
 - create a temporary preview URL and open it in a separate browser/private window;
 - download HTML handoff ZIP;
-- repeat export for React, Vue, React Native and Android.
+- repeat export for React, Vue, React Native and Android;
+- confirm the first-project AI prompt can be dismissed and does not reappear;
+- open Settings → AI, enable a connection, verify ChatGPT/Claude guided setup, and confirm existing projects default to not shared;
+- create a project through MCP and open its returned editor URL;
+- verify a stale remote write returns `REVISION_CONFLICT`;
+- verify an incompatible animation request returns `INCOMPATIBLE_ANIMATION`;
+- revoke the AI connection and confirm the old MCP address no longer works.
 
 ## Production deployment notes
 
@@ -64,4 +76,4 @@ The included Node server is intentionally minimal for MVP testing. Before public
 - store uploaded brand/media assets separately instead of large data URLs;
 - define retention policy for temporary previews.
 
-Do **not** expand into collaboration, advanced vector drawing, full code generation or AI generation before collecting first-user feedback unless required to fix a blocker.
+Do **not** expand into collaboration, advanced vector drawing, an embedded AI chat panel, or broader autonomous generation before collecting first-user feedback unless required to fix a blocker. The optional external ChatGPT/Claude connection and governed MCP handoff in this MVP are intentional scope.
