@@ -1,0 +1,24 @@
+# MVP acceptance
+
+- [ ] New project can be created without a tutorial.
+- [ ] Project opens with Header, Block 1, Block 2, Block 3, Block 4, Footer.
+- [ ] Branding is project-scoped.
+- [ ] Desktop, Laptop, Tablet and Mobile are visible as plain-English device choices.
+- [ ] Every device begins with the same component identities.
+- [ ] Block layout can be changed independently per device.
+- [ ] Component can be dragged from library into a section.
+- [ ] Component can be moved between sections on one device without moving it on the others.
+- [ ] Component content is shared across devices.
+- [ ] Block can be divided into section presets without CSS/grid terminology.
+- [ ] Animation library requires a selected component.
+- [ ] Only recommended/allowed animations for that component are shown.
+- [ ] Unsupported component+animation pairing is rejected even if crafted through drag data.
+- [ ] Page effects apply at block level and are device-specific.
+- [ ] Compare view shows all device arrangements.
+- [ ] Project autosaves locally.
+- [ ] Temporary client preview contains no editing controls.
+- [ ] Handoff ZIP downloads.
+- [ ] Handoff ZIP includes semantic design JSON and brand tokens.
+- [ ] HTML, React, Vue, React Native and Android are selectable export targets.
+- [ ] Form component exposes endpoint/method handoff fields.
+- [ ] No default UI uses Frame, Layer, Constraint, Auto Layout, Flexbox, Grid or DOM terminology.
