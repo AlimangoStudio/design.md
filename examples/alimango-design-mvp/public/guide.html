@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Alimango Design Guide</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#24212c;background:#fff}a{color:#6f4fdb;text-decoration:none}code{background:#f2eff8;padding:2px 5px;border-radius:5px}.shell{display:grid;grid-template-columns:270px minmax(0,1fr);min-height:100vh}.nav{position:sticky;top:0;height:100vh;overflow:auto;padding:28px 22px;background:#faf9fc;border-right:1px solid #ece8f3}.brand{font-weight:850;font-size:18px;letter-spacing:-.04em;margin-bottom:24px}.group{margin:22px 0 8px;color:#8d8797;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.nav a{display:block;padding:7px 9px;border-radius:8px;color:#5a5663;font-size:13px}.nav a:hover{background:#eee9fb;color:#4f31b5}.content{max-width:860px;padding:58px 64px 120px}.content section{scroll-margin-top:30px;margin-bottom:76px}.eyebrow{color:#7658dc;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}.content h1{font-size:48px;line-height:1;letter-spacing:-.055em;margin:8px 0 18px}.content h2{font-size:32px;letter-spacing:-.04em;margin:0 0 12px}.content h3{font-size:20px;margin-top:30px}.content p,.content li{font-size:16px;line-height:1.7;color:#55515d}.callout{background:#f6f3ff;border:1px solid #e6ddff;border-radius:16px;padding:20px 22px;margin:24px 0}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:26px 0}.flow span{background:#f5f2fa;border:1px solid #e8e2f0;padding:10px 13px;border-radius:10px;font-weight:700;font-size:13px}.step{display:grid;grid-template-columns:34px 1fr;gap:12px;margin:18px 0}.step b:first-child{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#7658dc;color:#fff}.copy{background:#201d27;color:#eeeaf6;border-radius:13px;padding:16px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;overflow:auto}.muted{color:#8d8797!important;font-size:13px!important}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{border:1px solid #ece8f3;border-radius:15px;padding:18px}.card h3{margin:0 0 6px}.card p{font-size:14px;margin:0}@media(max-width:820px){.shell{grid-template-columns:1fr}.nav{position:relative;height:auto;border-right:0;border-bottom:1px solid #ece8f3}.content{padding:38px 22px 80px}.content h1{font-size:38px}.two{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <aside class="nav">
+    <div class="brand">alimango design</div>
+    <div class="group">Getting started</div>
+    <a href="#overview">AI connection overview</a>
+    <a href="#workflow">Brainstorm there, design here</a>
+    <div class="group">Connect your AI</div>
+    <a href="#chatgpt">Connect ChatGPT</a>
+    <a href="#claude">Connect Claude</a>
+    <a href="#permissions">Project access & permissions</a>
+    <div class="group">Working together</div>
+    <a href="#handoff">Move an AI design into Alimango</a>
+    <a href="#revisions">Human + agent revisions</a>
+    <a href="#disconnect">Disconnect AI</a>
+    <div class="group">Reference</div>
+    <a href="#mcp">What MCP means</a>
+    <a href="#troubleshooting">Troubleshooting</a>
+  </aside>
+  <main class="content">
+    <section id="overview">
+      <span class="eyebrow">Optional connection</span>
+      <h1>Brainstorm there. Design here.</h1>
+      <p>Alimango Design lets you use ChatGPT or Claude for brainstorming, planning and first-pass assembly, then continue with the same editable project in the visual editor. AI is off by default and stays under <strong>Settings → AI</strong>.</p>
+      <div class="flow"><span>ChatGPT / Claude</span> → <span>Brainstorm</span> → <span>Create in Alimango</span> → <span>Human finishing</span> → <span>Client preview / code</span></div>
+      <div class="callout"><strong>You do not need AI to use Alimango.</strong><p>Connection is optional. The normal editor does not show an AI menu.</p></div>
+    </section>
+
+    <section id="workflow">
+      <span class="eyebrow">Recommended workflow</span>
+      <h2>Think in the cloud, finish visually</h2>
+      <p>Use the conversation where it is strongest: positioning, page structure, copy, audience, visual direction and requirements. When the idea is ready, ask the connected AI to create an editable Alimango project.</p>
+      <div class="copy">“We agreed on the structure and direction. Create this as an editable project in Alimango Design, then give me the editor link.”</div>
+      <p>Alimango receives semantic Blocks, Sections, Components, device layouts and compatible animations—not a screenshot.</p>
+    </section>
+
+    <section id="chatgpt">
+      <span class="eyebrow">Settings → AI</span>
+      <h2>Connect ChatGPT</h2>
+      <div class="step"><b>1</b><div><b>Enable AI connection in Alimango</b><p>Open Settings → AI and choose <strong>Enable AI connection</strong>. Alimango creates a private connection address.</p></div></div>
+      <div class="step"><b>2</b><div><b>Add Alimango Design in ChatGPT</b><p>Use ChatGPT's current custom app/MCP connection flow and paste the Alimango connection address when asked for the remote MCP endpoint. ChatGPT's UI can change, so use the current connector/app settings shown in your account.</p></div></div>
+      <div class="step"><b>3</b><div><b>Choose permissions in Alimango</b><p>Read, create and edit are separate switches. Creating previews and requesting export remain off unless you enable them.</p></div></div>
+      <div class="step"><b>4</b><div><b>Choose which existing projects ChatGPT may access</b><p>Existing projects are not shared automatically. Enable them individually under Existing project access.</p></div></div>
+      <div class="step"><b>5</b><div><b>Try a handoff</b><p>Brainstorm normally, then ask ChatGPT to create the agreed design in Alimango and return the editor link.</p></div></div>
+    </section>
+
+    <section id="claude">
+      <span class="eyebrow">Settings → AI</span>
+      <h2>Connect Claude</h2>
+      <div class="step"><b>1</b><div><b>Enable AI connection in Alimango</b><p>Open Settings → AI and create the private connection address.</p></div></div>
+      <div class="step"><b>2</b><div><b>Add a custom connector in Claude</b><p>Use Claude's current custom connector / remote MCP setup and enter the Alimango connection address.</p></div></div>
+      <div class="step"><b>3</b><div><b>Approve only the permissions you want</b><p>Alimango remains the source of truth for what the agent can read, create, edit, share or export.</p></div></div>
+      <div class="step"><b>4</b><div><b>Share existing projects one at a time</b><p>Turn project access on only when Claude needs to read or continue that design.</p></div></div>
+      <div class="step"><b>5</b><div><b>Move the result into the editor</b><p>Ask Claude to create or update the project and return the Alimango editor link.</p></div></div>
+    </section>
+
+    <section id="permissions">
+      <span class="eyebrow">Control</span>
+      <h2>Permissions and project access</h2>
+      <div class="two">
+        <div class="card"><h3>Connection permissions</h3><p>Read projects, create projects, edit projects, create preview links and request export are controlled separately.</p></div>
+        <div class="card"><h3>Project permissions</h3><p>Existing projects default to <strong>not shared</strong>. Turn access on per project only when you want an agent to work with it.</p></div>
+      </div>
+    </section>
+
+    <section id="handoff">
+      <span class="eyebrow">Input → output</span>
+      <h2>What moves from AI into Alimango</h2>
+      <p>The AI can create a project with the brief, branding, page/block structure, component selection, shared content, four device layouts and governed animations. Alimango returns an <strong>editor URL</strong> that opens the same semantic project for human finishing.</p>
+      <div class="copy">Input: brief + branding + assets + API requirements
+Output: alimango-design.json + editor URL + optional preview / handoff</div>
+    </section>
+
+    <section id="revisions">
+      <span class="eyebrow">Safe collaboration</span>
+      <h2>Human changes are not silently overwritten</h2>
+      <p>Every remote project has a revision number. Agent write operations require the revision they last read. If a designer changes the project in Alimango first, a stale agent write receives a revision conflict and must read the latest project before continuing.</p>
+    </section>
+
+    <section id="disconnect">
+      <span class="eyebrow">Settings → AI</span>
+      <h2>Disconnect AI</h2>
+      <p>Choose <strong>Disconnect</strong> to revoke the current remote connection. Project access is disabled and the old connection address stops working.</p>
+    </section>
+
+    <section id="mcp">
+      <span class="eyebrow">Technical reference</span>
+      <h2>What MCP means</h2>
+      <p>MCP is the connection protocol used by compatible AI clients to discover Alimango's constrained design tools. Designers do not need to understand MCP to use the feature.</p>
+      <p>Alimango exposes semantic operations such as <code>create_project</code>, <code>add_block</code>, <code>set_block_layout</code>, <code>add_component</code>, <code>get_compatible_animations</code>, <code>apply_animation</code> and <code>validate_design</code>. Agents do not manipulate arbitrary CSS or canvas coordinates.</p>
+    </section>
+
+    <section id="troubleshooting">
+      <span class="eyebrow">Help</span>
+      <h2>Troubleshooting</h2>
+      <h3>The AI cannot see my existing project</h3><p>Open Settings → AI and enable access for that project.</p>
+      <h3>The agent says REVISION_CONFLICT</h3><p>The project changed after the agent last read it. Ask the agent to read the project again and continue from the new revision.</p>
+      <h3>The agent cannot create a preview</h3><p>Preview permission is off by default. Enable it in Settings → AI only if you want the connected agent to create client links.</p>
+      <h3>I changed my mind</h3><p>Disconnect the AI connection in Settings. Alimango keeps your local projects.</p>
+      <p class="muted">The first public MVP uses a revocable capability URL for testing. Broad production release should use account authentication and OAuth rather than relying on a capability URL.</p>
+    </section>
+  </main>
+</div>
+</body>
+</html>
