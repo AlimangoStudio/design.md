@@ -1,0 +1,23 @@
+# AI / MCP acceptance
+
+- [ ] First project open promotes AI only once and includes ChatGPT, Claude and Not now.
+- [ ] Not now leaves AI disabled.
+- [ ] AI does not appear in the main project/editor menu.
+- [ ] Settings contains Profile, Appearance, AI, Projects, Export, Privacy & Security.
+- [ ] Settings → AI can create and revoke a remote connection.
+- [ ] Existing projects remain private until enabled individually.
+- [ ] Read/create/edit/share/export permissions are independent.
+- [ ] Share and export default off.
+- [ ] ChatGPT and Claude guided setup popouts exist.
+- [ ] `/guide.html` is readable as a GitBook-style setup guide.
+- [ ] MCP supports initialize, ping, tools/list, tools/call, resources/list and resources/read.
+- [ ] MCP returns an editor URL for agent-created projects.
+- [ ] Opening the editor URL imports the semantic project into Alimango.
+- [ ] The agent library includes Desktop, Laptop, Tablet and Mobile.
+- [ ] Shared component identity/content is preserved across devices.
+- [ ] Device layout operations remain device-specific.
+- [ ] Incompatible animation pairing returns `INCOMPATIBLE_ANIMATION`.
+- [ ] Stale mutations return `REVISION_CONFLICT`.
+- [ ] Preview creation is denied unless share permission is enabled.
+- [ ] Export is denied unless export permission is enabled.
+- [ ] Disconnecting invalidates the old MCP capability URL.
