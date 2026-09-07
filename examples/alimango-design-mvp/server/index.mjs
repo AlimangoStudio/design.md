@@ -3,16 +3,19 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import crypto from 'node:crypto';
+import { createAiGateway } from './ai-gateway.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 const publicDir = path.join(root, 'public');
 const shareDir = path.join(here, 'data', 'shares');
+const agentDir = path.join(here, 'data', 'agents');
 const port = Number(process.env.PORT || 4173);
 const sevenDays = 7 * 24 * 60 * 60 * 1000;
 const maxBodyBytes = 6 * 1024 * 1024;
 
 await fs.mkdir(shareDir, { recursive: true });
+const aiGateway = await createAiGateway({ dataDir: agentDir, shareDir });
 
 const mime = {
   '.html': 'text/html; charset=utf-8',
@@ -128,7 +131,11 @@ async function serveFile(req, res, pathname) {
 
 const server = createServer(async (req, res) => {
   try {
-    const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+    const proto = String(req.headers['x-forwarded-proto'] || 'http').split(',')[0].trim();
+    const host = String(req.headers['x-forwarded-host'] || req.headers.host || `localhost:${port}`).split(',')[0].trim();
+    const baseUrl = `${proto}://${host}`;
+    const url = new URL(req.url, baseUrl);
+    if (await aiGateway(req, res, url, baseUrl)) return;
     if (url.pathname === '/api/shares' && req.method === 'POST') return await createShare(req, res);
     const match = url.pathname.match(/^\/api\/shares\/([a-f0-9]{16})$/);
     if (match && req.method === 'GET') return await getShare(match[1], res);
