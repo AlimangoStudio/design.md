@@ -36,6 +36,11 @@ The app tests two ideas with one system:
 - Downloadable handoff ZIP containing the semantic design document, branding tokens, static preview and a target-specific scaffold.
 - Initial export targets: HTML, React, Vue, React Native and Android/Jetpack Compose.
 - Forms carry simple API endpoint/method metadata and export an OpenAPI handoff stub.
+- Optional **Settings → AI** connection for ChatGPT/Claude; AI stays out of the main editor menu.
+- One-time guided connection onboarding with an immediate **Not now** path.
+- Remote MCP design tools that create/read/edit the same semantic project while enforcing permissions, per-project access, revision conflicts and component-animation compatibility.
+- Agent-created projects return an editor handoff URL so brainstorming can happen in the cloud and finishing can happen visually in Alimango.
+- GitBook-style AI connection guide at `/guide.html` plus Markdown sources under `docs/`.
 
 ## Run
 
@@ -56,6 +61,12 @@ Tests:
 ```bash
 node --test tests/*.test.mjs
 ```
+
+## Optional AI connection
+
+The customer-facing workflow is **Brainstorm there. Design here.** AI is off by default, is promoted only during onboarding, and permanently lives under **Settings → AI** rather than the editor's main design menu. Existing projects are not exposed automatically; the user explicitly enables each project and controls read/create/edit/share/export permissions.
+
+The MVP exposes a constrained remote MCP endpoint for compatible clients such as ChatGPT and Claude. Agents operate on semantic Blocks, Sections, Components and governed Animations instead of arbitrary CSS or canvas coordinates. Existing-project mutations require `expected_revision`, so a stale agent cannot silently overwrite newer human finishing work. See `AI_MCP.md`, `AI_MCP_ACCEPTANCE.md` and `docs/SUMMARY.md`.
 
 ## Architecture choice
 
